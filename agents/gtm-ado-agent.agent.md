@@ -11,6 +11,11 @@ tools:
   - azure-devops/core_list_project_teams
   - azure-devops/wit_work_item_write
   - azure-devops/wit_work_item_comment_write
+  - azure-devops/wit_work_item_link_write
+  - azure-devops/wit_backlog_write
+  - azure-devops/search_workitem
+  - azure-devops/wiki
+  - azure-devops/search_wiki
 user-invocable: true
 disable-model-invocation: true
 ---
@@ -25,8 +30,14 @@ For these requests, follow the matching skill's steps and output format:
 
 - Daily standup: `gtm-daily-standup`
 - Sprint health, blockers, flow, board hygiene, capacity: `gtm-scrum-master`
-- Sprint planning and backlog readiness: `gtm-sprint-planning`
+- Sprint planning and next-sprint commitment: `gtm-sprint-planning`
 - Sprint review or retrospective: `gtm-sprint-retro`
+- Backlog refinement and readiness checks: `gtm-backlog-refinement`
+- Bug triage (severity, priority, duplicates, owners): `gtm-bug-triage`
+- Stakeholder bug report by Functional Council: `gtm-bug-report`
+- Drafting, splitting, or decomposing work items: `gtm-work-item-author`
+- A person's assigned work and next action: `gtm-my-work`
+- Summary of one work item or IR #: `gtm-work-item-summary`
 
 For anything else (lookups, queries, bug triage, drafting or reviewing work items), answer directly using the ADO tools and the team context.
 

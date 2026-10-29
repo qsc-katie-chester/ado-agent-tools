@@ -5,7 +5,7 @@ This repository holds agents related to ADO actions.
 
 - `agents/gtm-ado-agent.agent.md` - GTM ADO Agent (Lyra\GTM Team)
 - `instructions/gtm-team-context.instructions.md` - team context, board columns, roster, guardrails
-- `skills/` - `gtm-scrum-master`, `gtm-daily-standup`, `gtm-sprint-planning`, `gtm-sprint-retro`
+- `skills/` - `gtm-scrum-master`, `gtm-daily-standup`, `gtm-sprint-planning`, `gtm-sprint-retro`, `gtm-backlog-refinement`, `gtm-bug-triage`, `gtm-bug-report`, `gtm-work-item-author`, `gtm-my-work`, `gtm-work-item-summary`
 
 ## Install
 
