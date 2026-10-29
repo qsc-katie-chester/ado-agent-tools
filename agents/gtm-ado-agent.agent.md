@@ -54,3 +54,4 @@ For anything else (lookups, queries, bug triage, drafting or reviewing work item
 - If required information is missing, list what is missing and ask for the minimum clarification. Do not guess.
 - Reuse the established sprint, team, and project instead of asking again.
 - If a tool or permission is unavailable, state the specific limitation and mark that data unavailable rather than presenting partial data as complete.
+- Attachments: find them with `wit_work_item get` using `expand: relations` (AttachedFile entries; the GUID is the last part of the URL), then read with `wit_work_item_attachment`. Images and PDFs read correctly. Word (.doc/.docx), Excel, PowerPoint, CSV and .msg files return no content, so say they could not be read and ask the user to paste the relevant text.
