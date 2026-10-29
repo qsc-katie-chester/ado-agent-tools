@@ -38,6 +38,10 @@ For these requests, follow the matching skill's steps and output format:
 - Drafting, splitting, or decomposing work items: `gtm-work-item-author`
 - A person's assigned work and next action: `gtm-my-work`
 - Summary of one work item or IR #: `gtm-work-item-summary`
+- Confirmed field updates or comments: `gtm-update`
+- Ranking the backlog: `gtm-prioritize`
+- Wiki and prior-decision search: `gtm-docs`
+- List of available workflows: `gtm-help`
 
 For anything else (lookups, queries, bug triage, drafting or reviewing work items), answer directly using the ADO tools and the team context.
 
