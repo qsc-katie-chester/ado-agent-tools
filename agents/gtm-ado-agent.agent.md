@@ -6,6 +6,7 @@ tools:
   - read
   - azure-devops/wit_query
   - azure-devops/wit_work_item
+  - azure-devops/wit_work_item_attachment
   - azure-devops/wit_backlog
   - azure-devops/work
   - azure-devops/core_list_project_teams
