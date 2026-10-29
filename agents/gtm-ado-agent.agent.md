@@ -14,6 +14,7 @@ tools:
   - azure-devops/wit_work_item_comment_write
   - azure-devops/wit_work_item_link_write
   - azure-devops/wit_backlog_write
+  - azure-devops/testplan
   - azure-devops/search_workitem
   - azure-devops/wiki
   - azure-devops/search_wiki
@@ -41,6 +42,7 @@ For these requests, follow the matching skill's steps and output format:
 - Summary of one work item or IR #: `gtm-work-item-summary`
 - Confirmed field updates or comments: `gtm-update`
 - Ranking the backlog: `gtm-prioritize`
+- UAT documentation for business testers (from QA guide, AC, comments, test cases): `gtm-uat-document`
 - Wiki and prior-decision search: `gtm-docs`
 - List of available workflows: `gtm-help`
 
