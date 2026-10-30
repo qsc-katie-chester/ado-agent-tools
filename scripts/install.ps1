@@ -20,4 +20,4 @@ foreach ($folder in 'agents', 'skills', 'instructions') {
     $count = (Get-ChildItem $source -Recurse -File).Count
     Write-Host "Copied $count files to $dest"
 }
-Write-Host 'Done. Restart the Copilot app or CLI, then type /bpe-help.'
+Write-Host 'Done. Close and reopen the Copilot app, then type /bpe-help.'

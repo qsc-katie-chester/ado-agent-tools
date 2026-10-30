@@ -1,6 +1,6 @@
 # 9. Cheat sheet
 
-**Update toolkit:** `cd $HOME\source\ado-agent-tools` then `git pull` then `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`, restart Copilot.
+**Update toolkit:** `cd $HOME\source\ado-agent-tools` then `git pull` then `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`, close and reopen the Copilot app.
 
 | I want to... | Use |
 |---|---|

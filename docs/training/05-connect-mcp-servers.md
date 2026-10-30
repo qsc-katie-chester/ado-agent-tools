@@ -12,7 +12,7 @@ MCP servers are the connections that let agents read your systems. **The name yo
 
 ## Steps
 
-1. In Copilot open MCP settings: app **Customize > Installed** (or **Settings > MCP servers**); CLI: `/mcp`.
+1. In the Copilot app open **Customize > Installed** and find the MCP servers list (or **Settings > MCP servers**).
 2. Add each server using the install details your IT or Katie provides. [PLACEHOLDER: add the approved install link/command for each server before the session.]
 3. Set the server **name** to exactly the name in the table.
 4. Click **Sign in** on each server and use your own work account. Never share credentials.
