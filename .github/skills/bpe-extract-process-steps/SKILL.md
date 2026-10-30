@@ -3,7 +3,6 @@ name: bpe-extract-process-steps
 description: "Read selected sources and extract process steps, actors, systems, inputs/outputs, handoffs, exceptions, and controls with a citation for each."
 argument-hint: "List of source IDs/URLs from bpe-gather-sources"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Extract process steps

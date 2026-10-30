@@ -3,7 +3,6 @@ name: bpe-definition-of-ready-check
 description: "Check a PBI/Bug or IR against GTM formatting, required fields, process mapping, and dependencies; return Pass/Fail/Unknown with evidence."
 argument-hint: "ADO work item ID(s) or IR number(s)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Definition of Ready check

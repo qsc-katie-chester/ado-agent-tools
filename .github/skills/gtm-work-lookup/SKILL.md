@@ -3,7 +3,6 @@ name: gtm-work-lookup
 description: "Look up GTM work: one person's assigned work with blockers and best next action, or a summary of a single work item or IR # (description, ACs, links, latest status)."
 argument-hint: "A person name (default: the signed-in user) or a work item ID / IR # (several allowed)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM work lookup

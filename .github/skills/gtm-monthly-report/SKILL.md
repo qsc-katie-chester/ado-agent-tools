@@ -3,7 +3,6 @@ name: gtm-monthly-report
 description: "Run the monthly GTM leadership report for a supplied month or date range: deployed PBIs, resolved and new bugs by Functional Council, delivery highlights, backlog and sprint outlook, and production Salesforce Intake Request prioritization, movement, and blockers."
 argument-hint: "Month and year or inclusive start/end dates, for example September 2026"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM Monthly Leadership Report

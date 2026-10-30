@@ -3,7 +3,6 @@ name: bpe-assess-change-impact
 description: "For the process steps a change touches, identify upstream/downstream steps, systems, data, integrations, exceptions, reports, existing tests and UAT, related ADO items, and documentation that becomes stale."
 argument-hint: "Output of bpe-map-change-to-process"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Assess change impact

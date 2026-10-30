@@ -2,7 +2,6 @@
 name: gtm-help
 description: "Menu of what the GTM Agent can do: the gtm-* skills with example prompts. Start here if you are unsure what to ask."
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM help
@@ -30,4 +29,4 @@ Show this list, then ask which workflow the user wants. Do not call any tools un
 
 Process documentation, change impact, readiness and meeting recaps are handled by the **BPE Agent** (`/bpe-help`).
 
-All skills are read-only except `/gtm-update` and `/gtm-work-item-author`, which preview and require confirmation before writing.
+Most skills are read-only. `/gtm-update`, `/gtm-work-item-author`, `/gtm-uat-document`, and `/new-product-launch` can write after showing the exact proposed changes and receiving your explicit approval. The BPE Agent's publish/tag/diagram skills also require an approved preview.

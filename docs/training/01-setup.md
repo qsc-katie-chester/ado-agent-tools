@@ -22,13 +22,13 @@ No install step is needed. The agents, skills and instructions live in the repo'
 1. In the Copilot app, open the repo you cloned in step 2 and start a new session.
 2. In the agent picker choose **GTM Agent** or **BPE Agent**. In a new chat type `/` and look for `/gtm-help` or `/bpe-help`.
 
-Optional: to use the agents in other projects too, run this once in PowerShell from the repo folder, then reopen the app:
+To install the agents for use in other projects, run this from the repo folder after pulling the latest changes:
 
 ```
-powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\update.ps1
 ```
 
-It copies the files from `.github` to `C:\Users\<you>\.copilot\`.
+This safely fast-forwards the current branch (only when the working tree is clean), validates the configuration, and copies `.github/agents`, `.github/skills`, and `.github/instructions` to `C:\Users\<you>\.copilot\`. Use `main` (or the branch that receives the merged updates). Restart Copilot and start a new session; an already-open session does not reload its instructions. For an offline/local copy without pulling, use `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`.
 
 ## Step 4: Connect your systems (MCP servers)
 
@@ -38,14 +38,14 @@ Agents look for these exact server names. Use them when you add each server in t
 |---|---|---|
 | `azure-devops` | Azure DevOps | Yes |
 | `atlassian` | Confluence / Jira | Yes for BPE agents |
-| `sf-mcp-server` | Salesforce (read-only); see setup below | Yes for change impact and process docs |
+| `salesforce` | Salesforce (read-only); see setup below | Yes for change impact and process docs |
 | `miro`, `figma` | Diagrams | Optional |
 
 Sign in to each with your own work account. Ask Katie for the production Salesforce alias; never test in production.
 
 [PLACEHOLDER: Katie adds the approved install link or command for each server.]
 
-### Connecting Salesforce (`sf-mcp-server`)
+### Connecting Salesforce (`salesforce`)
 
 This is Salesforce's official connector. It lets the agent read Salesforce using your own login. You do this once, and it takes about 15 minutes. You copy and paste every command; you do not need to understand them.
 
@@ -78,10 +78,10 @@ This is Salesforce's official connector. It lets the agent read Salesforce using
 **Part C: Add the connector in the app**
 
 7. Open the Copilot app and go to **Customize > Installed**.
-8. Add a new local MCP server. If you see a box for JSON or a configuration, paste the text below. If you see separate boxes, enter: Name `sf-mcp-server`, Command `npx`, and Arguments `-y @salesforce/mcp --orgs QA,PROD --toolsets orgs,metadata,data`.
+8. Add a new local MCP server. If you see a box for JSON or a configuration, paste the text below. If you see separate boxes, enter: Name `salesforce`, Command `npx`, and Arguments `-y @salesforce/mcp --orgs QA,PROD --toolsets orgs,metadata,data`.
    ```json
-   "sf-mcp-server": {
-     "tools": ["*"],
+   "salesforce": {
+     "tools": ["get_username", "list_all_orgs", "run_soql_query", "resume_tool_operation"],
      "type": "local",
      "command": "npx",
      "args": ["-y", "@salesforce/mcp", "--orgs", "QA,PROD", "--toolsets", "orgs,metadata,data"]

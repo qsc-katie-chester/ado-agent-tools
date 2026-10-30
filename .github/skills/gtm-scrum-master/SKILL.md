@@ -3,7 +3,6 @@ name: gtm-scrum-master
 description: "Act as scrum master for the GTM Team: sprint health, blockers, flow, capacity, and process hygiene from Azure DevOps."
 argument-hint: "Optional focus, for example 'sprint health', 'blockers', or 'board hygiene'"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM scrum master

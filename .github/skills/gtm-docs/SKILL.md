@@ -3,7 +3,6 @@ name: gtm-docs
 description: "Search Azure DevOps wiki and work items for GTM documentation and prior decisions, and summarize the matches with links."
 argument-hint: "Search query, for example RoomSuite bundling or Oracle auto-book"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM docs

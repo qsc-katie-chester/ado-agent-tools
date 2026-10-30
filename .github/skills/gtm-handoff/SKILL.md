@@ -3,7 +3,6 @@ name: gtm-handoff
 description: "Draft a structured handoff for a GTM work item (dev to QA, QA to UAT, UAT to Release Manager, or person to person) from ADO evidence, ready to paste as a comment."
 argument-hint: "ADO work item ID and who it is handing off to"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM handoff

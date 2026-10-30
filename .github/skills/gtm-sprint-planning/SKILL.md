@@ -3,7 +3,6 @@ name: gtm-sprint-planning
 description: "Prepare GTM Team sprint planning from Azure DevOps: ready backlog candidates, carryover, production support load, capacity, and a proposed commitment."
 argument-hint: "Optional: target sprint name, for example Sprint 25"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM sprint planning

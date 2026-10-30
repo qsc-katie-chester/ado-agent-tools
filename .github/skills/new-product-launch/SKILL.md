@@ -1,7 +1,7 @@
 ---
 name: new-product-launch
-description: Auto-create a full ADO work item hierarchy (Initiative → Epics → Features → PBIs) for a new product launch in source systems (Salesforce CPQ + Oracle Order Management). Accepts structured input OR unstructured content (meeting transcript, PowerPoint text, notes). Based on the MDC/MDX RoomSuite launch pattern (Initiative
-disable-model-invocation: true
+description: "Plan and, after explicit approval, create an Azure DevOps work item hierarchy for a product launch spanning Salesforce CPQ and Oracle Order Management. Accept structured launch details or extract them from supplied notes."
+user-invocable: true
 ---
 # New Product Launch — ADO Story Auto-Creation
 
@@ -83,7 +83,7 @@ If no document was provided, ask the user for the following. Do NOT proceed with
 | CPQ PM Owner | Katie Chester | ✅ |
 | Oracle PM Owner | Michelle Flynn | ✅ |
 | Parent Initiative ID (if exists) | 1285166 | Optional |
-| Target Iteration Path | Lyra\FY2026\PI4 | ✅ |
+| Target Iteration | Resolve from the live GTM Team iteration list | ✅ |
 
 ---
 
@@ -95,13 +95,13 @@ Before any work item is created, review the extracted or manually provided detai
 - Skip (already covered by an existing item)
 - Needs Human Review
 
-Use the live ADO search results, the historical MDC/MDX pattern, and the user's answers to decide the label. If an item is a duplicate, already covered, or not clearly supported, do not create it yet. Show the classification and a short reason for each item, then wait for the user's approval.
+Use live ADO search results, the historical MDC/MDX pattern, and the user's answers to decide the label. If an item is a duplicate, already covered, or not clearly supported, do not create it yet. Show the classification and a short reason for each item; include only approved "Create New" items in the complete preview and approval request in Step 3.
 
 ---
 
-## STEP 3 — Confirm Before Creating
+## STEP 3 — Preview and Confirm Before Creating
 
-Show the user the full hierarchy that will be created and ask for confirmation:
+Show the user the full proposed hierarchy:
 
 ```
 Proposed Work Item Hierarchy:
@@ -121,13 +121,15 @@ Initiative: [PRODUCT_NAME] Product Launch
 
 ---
 
-## STEP 3 — Create Work Items (in order, top-down)
+Before asking for approval, show the exact title, work item type, description, acceptance criteria, tags, assignee, priority, area, iteration, and parent link for every proposed item. Follow the GTM work-item formatting standard for every created item's description and acceptance criteria. Do not rely on the abbreviated hierarchy sketch above as the approval preview. Create nothing until the user explicitly approves the complete preview.
+
+## STEP 4 — Create Work Items (in order, top-down)
 
 Use the ADO tools to create each item. Set parent-child links immediately after creating each item.
 
 ### COMMON FIELDS (apply to all GTM Team items unless noted)
 - Area Path: `Lyra\GTM Team`
-- Iteration Path: `[TARGET_ITERATION]`
+- Iteration Path: `[TARGET_ITERATION]` resolved from the GTM Team's live iterations; do not construct the path from the example or guess it.
 - Project: `Lyra`
 
 ---
@@ -139,8 +141,7 @@ Use the ADO tools to create each item. Set parent-child links immediately after 
 **Fields:**
 - Work Item Type: `Initiative`
 - Area Path: `Lyra`
-- Iteration Path: `Lyra\FY2026`
-- State: `New`
+- Iteration Path: `[TARGET_ITERATION]` selected from live ADO iteration data and included in the approved preview.
 - Tags: `[FUNCTIONAL_COUNCIL_TAG]`
 
 ---

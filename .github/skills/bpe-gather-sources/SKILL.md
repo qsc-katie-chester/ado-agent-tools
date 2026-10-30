@@ -3,7 +3,6 @@ name: bpe-gather-sources
 description: "Gather evidence for a business process: find Confluence/ADO/Salesforce sources, mine ADO work items and test cases for process facts, or generate an M365 Researcher prompt and ingest its report. Read-only."
 argument-hint: "Process name plus mode: find sources (default), mine ADO, or M365 prompt. Optional keywords, date window, board columns, sub-process page."
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Gather process sources

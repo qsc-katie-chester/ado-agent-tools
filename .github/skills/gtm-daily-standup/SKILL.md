@@ -2,7 +2,6 @@
 name: gtm-daily-standup
 description: "Prepare a concise, action-oriented GTM Team daily standup summary from Azure DevOps."
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM daily standup

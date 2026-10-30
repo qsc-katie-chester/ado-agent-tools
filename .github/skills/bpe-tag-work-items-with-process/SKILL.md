@@ -3,7 +3,6 @@ name: bpe-tag-work-items-with-process
 description: "Propose and, on approval, add proc: tags (sub-process page) to ADO work items so the change register can be queried. Tags only; no other field changes."
 argument-hint: "Work item IDs or mining output; tag convention"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Tag work items with process
