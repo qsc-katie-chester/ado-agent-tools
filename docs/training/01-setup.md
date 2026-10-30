@@ -43,18 +43,38 @@ Sign in to each with your own work account. Ask Katie for the production Salesfo
 
 ### Connecting Salesforce (`sf-mcp-server`)
 
-The Salesforce server runs on your computer and uses your own Salesforce CLI login. There is no separate sign-in in the app.
+This is Salesforce's official connector. It lets the agent read Salesforce using your own login. You do this once, and it takes about 15 minutes. You copy and paste every command; you do not need to understand them.
 
-1. Install Node.js LTS: `winget install --id OpenJS.NodeJS.LTS -e`
-2. Install the Salesforce CLI: `npm install -g @salesforce/cli`
-3. Close and reopen PowerShell, then log in to each org you need. A browser window opens each time; sign in with your work account:
+**How to paste a command:** open PowerShell (press the Windows key, type `PowerShell`, press Enter). Copy a command from this page, right-click inside the PowerShell window to paste it, then press Enter. Wait until the cursor comes back before the next step.
+
+**Part A: Install two programs**
+
+1. Paste this and press Enter. If Windows asks "Do you want to allow this app to make changes?", click **Yes**.
+   ```
+   winget install --id OpenJS.NodeJS.LTS -e
+   ```
+2. **Close PowerShell and open it again.** This is required.
+3. Paste this and press Enter. It can take a few minutes and print a lot of text; that is normal.
+   ```
+   npm install -g @salesforce/cli
+   ```
+
+**Part B: Log in to Salesforce**
+
+4. Paste this and press Enter. Your web browser opens a Salesforce login page. Sign in with your work account and click **Allow**. When the browser says you can close the window, return to PowerShell.
    ```
    sf org login web --alias QA --instance-url https://qsc--qa.sandbox.my.salesforce.com
+   ```
+5. Repeat step 4 for each other org you were told to use. Change the word after `--alias` and the web address. For production, ask Katie first:
+   ```
    sf org login web --alias PROD --instance-url https://qsc.my.salesforce.com
    ```
-   Add any other sandbox you use the same way (change the alias and URL).
-4. Check the logins: `sf org list`. Each org should be listed.
-5. In the app, open **Customize > Installed**, add a local MCP server named `sf-mcp-server`, and use this configuration (replace the org list with your own aliases):
+6. Check it worked: paste `sf org list` and press Enter. Every org you logged in to should appear in the list.
+
+**Part C: Add the connector in the app**
+
+7. Open the Copilot app and go to **Customize > Installed**.
+8. Add a new local MCP server. If you see a box for JSON or a configuration, paste the text below. If you see separate boxes, enter: Name `sf-mcp-server`, Command `npx`, and Arguments `-y @salesforce/mcp --orgs QA,PROD --toolsets orgs,metadata,data`.
    ```json
    "sf-mcp-server": {
      "tools": ["*"],
@@ -63,12 +83,21 @@ The Salesforce server runs on your computer and uses your own Salesforce CLI log
      "args": ["-y", "@salesforce/mcp", "--orgs", "QA,PROD", "--toolsets", "orgs,metadata,data"]
    }
    ```
-6. Fully close and reopen the app. In a new chat ask: `List my Salesforce orgs`. You should see the aliases from step 3.
+   In `QA,PROD`, use the same names you chose after `--alias` in Part B, separated by commas with no spaces. Leave out any org you did not log in to.
+9. Fully close the Copilot app and open it again.
 
-Notes:
-- Only orgs listed in `--orgs` are available to the agent.
-- If a login expires, repeat step 3 for that org.
-- Agents are read-only. Do not ask them to deploy metadata, and never test in production.
+**Part D: Check it works**
+
+10. In a new chat, type: `List my Salesforce orgs`. You should see the names from Part B. If you do, you are done.
+
+**If something goes wrong**
+- "winget" or "npm" is not recognized: close PowerShell, open it again, and retry. If it still fails, ask Katie.
+- An org is missing from the chat: repeat Part B for it and check its name is in the app configuration (step 8).
+- It stops working weeks later: your Salesforce login expired. Repeat step 4 for that org, then restart the app.
+
+**Rules**
+- Agents only read Salesforce. Never ask one to deploy or change anything.
+- Never test in production. Use QA unless Katie tells you otherwise.
 
 ## Step 5: First run
 
