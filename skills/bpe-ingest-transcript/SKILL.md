@@ -25,6 +25,12 @@ Read-only until the user approves. Follow `bpe-process-documentation.instruction
 6. Flag sensitive content (personal data, pricing, customer names) and exclude it from page text.
 7. Output a preview: per page, the exact rows or sentences to add or change, plus open questions answered and new questions raised. Wait for approval, then update the draft; publish only via `bpe-publish-process-doc`.
 
+## Meeting recap output
+When the user wants a recap (not only page updates), also produce:
+- **Decisions** (explicit only), **Open questions** (questions are not decisions), **Actions** (owner and date only if stated, otherwise "Owner not stated"), **Facts/clarifications**, **Risks**.
+- Cross-reference ADO IDs and IR numbers verbatim; do not infer priority, scope, or sprint commitment.
+- Proposed updates: process page changes (Add/Change/Confirm/Contradict), Open Gaps Register rows to close (G01-G23, page 5057904674), and ADO comments. Preview each; write only after approval, via `bpe-publish-process-doc` for pages.
+
 ## Rules
 - Never infer steps from tone or implication. Mark unclear audio or ambiguous references as Gap.
 - Keep the transcript out of Confluence; cite it in the source map by title and date.

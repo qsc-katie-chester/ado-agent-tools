@@ -5,16 +5,16 @@
 | I want to... | Use |
 |---|---|
 | See what is available | `/bpe-help`, `/gtm-help` |
-| Summarize one item | `/gtm-work-item-summary <ID>` |
+| Summarize one item | GTM Agent, `/gtm-work-lookup <ID>` |
 | Standup / sprint health | `/gtm-daily-standup`, `/gtm-scrum-master` |
-| Is a PBI ready? | BPE Readiness Checker |
-| What does an enhancement change? | BPE Change Impact Analyst |
-| What should QA/UAT cover? | BPE Test and UAT Coverage |
-| Recap a meeting | BPE Meeting Recap |
-| Document a process | BPE Process Cartographer |
-| Draw a process flow | BPE Process Flow Builder |
+| Is a PBI ready? | BPE Agent, `/bpe-definition-of-ready-check` |
+| What does an enhancement change? | BPE Agent, `/bpe-assess-change-impact` |
+| What should QA/UAT cover? | BPE Agent, `/bpe-coverage-gap-report` |
+| Recap a meeting | BPE Agent, `/bpe-ingest-transcript` |
+| Document a process | BPE Agent, `/bpe-gather-sources` then `/bpe-draft-process-doc` |
+| Draw a process flow | BPE Agent, `/bpe-process-doc-to-diagram` |
 | Draft a work item or UAT guide | `/gtm-work-item-author`, `/gtm-uat-document` |
-| Bug triage / report | `/gtm-bug-triage`, `/gtm-bug-report` |
+| Bug triage / report | `/gtm-bugs` |
 
 **Labels:** Confirmed (in a source) · Conflicting (sources disagree) · Inferred (reasoned) · Gap (not found).
 **Safety:** read-only until you approve a preview. Never test in production. No secrets in chat.

@@ -18,3 +18,8 @@ Read-only. Follow `bpe-process-documentation.instructions.md`.
 
 ## Output
 Table: AC/requirement | process step(s) | change type (new/modified/removed/none) | stated reason | label (Confirmed/Inferred/Gap). Also: process doc used and status, or "no process doc found".
+
+## Boundaries
+- The "why" comes only from the request, IR, and comments, quoted and cited; if absent, say so. Do not infer intent, priority, or scope.
+- If no approved process document exists, say so, mark steps Inferred or Gap, and suggest documenting the process first (`bpe-gather-sources`). Never present Inferred impacts as Confirmed.
+- Do not assign owners, estimates, or priority; list owner types for the user to decide.
