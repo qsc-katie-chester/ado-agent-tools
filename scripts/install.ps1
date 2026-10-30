@@ -1,8 +1,10 @@
 #requires -Version 5.1
 <#
 .SYNOPSIS
-  Copies the team agents, skills and instructions into your personal Copilot folder.
+  OPTIONAL: copies the team agents, skills and instructions from .github into your personal Copilot folder.
 .DESCRIPTION
+  Not required inside this repo (the Copilot app reads .github automatically). Use it only to make
+  the agents available in every project.
   Run from the repo folder:  powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
   Existing files with the same name are overwritten. Your own other files are not touched.
   Agents and skills retired by the consolidation are moved to <target>\backup-retired (not deleted).
@@ -39,7 +41,7 @@ foreach ($name in $retiredSkills) {
 }
 
 foreach ($folder in 'agents', 'skills', 'instructions') {
-    $source = Join-Path $repo $folder
+    $source = Join-Path $repo ".github\$folder"
     $dest = Join-Path $Target $folder
     New-Item -ItemType Directory -Force -Path $dest | Out-Null
     Copy-Item -Path (Join-Path $source '*') -Destination $dest -Recurse -Force

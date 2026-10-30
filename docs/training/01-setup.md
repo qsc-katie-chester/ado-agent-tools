@@ -15,16 +15,20 @@
 No luck? Install Git (`winget install --id Git.Git -e` in PowerShell) and run:
 `git clone https://github.com/qsc-katie-chester/ado-agent-tools.git`
 
-## Step 3: Install the toolkit
+## Step 3: Open the repo and pick an agent
 
-In PowerShell:
+No install step is needed. The agents, skills and instructions live in the repo's `.github` folder, which the Copilot app finds automatically.
+
+1. In the Copilot app, open the repo you cloned in step 2 and start a new session.
+2. In the agent picker choose **GTM Agent** or **BPE Agent**. In a new chat type `/` and look for `/gtm-help` or `/bpe-help`.
+
+Optional: to use the agents in other projects too, run this once in PowerShell from the repo folder, then reopen the app:
 
 ```
-cd <folder from step 2>
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
 ```
 
-You should see "Done". Fully close and reopen the Copilot app. In a new chat type `/` and look for `/bpe-help`.
+It copies the files from `.github` to `C:\Users\<you>\.copilot\`.
 
 ## Step 4: Connect your systems (MCP servers)
 
@@ -107,4 +111,4 @@ Type `/bpe-help`. You see a table of jobs and the agent for each. Nothing is rea
 
 ## Updating later
 
-Ask Copilot in the repo: "pull the latest changes", then run the install script again and reopen the app.
+Ask Copilot in the repo: "pull the latest changes" (or run `git pull`), then start a new session. If you used the optional install script, run it again.
