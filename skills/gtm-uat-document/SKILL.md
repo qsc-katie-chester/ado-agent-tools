@@ -1,6 +1,6 @@
 ---
 name: gtm-uat-document
-description: "Create a business-friendly UAT document (Confluence-ready Markdown) for a GTM work item from its QA guide, acceptance criteria, description, recent comments, and ADO test cases/suites."
+description: "Create a business-friendly UAT document (published to Confluence) for a GTM work item from its QA guide, acceptance criteria, description, recent comments, and ADO test cases/suites."
 argument-hint: "Work item ID (PBI, Bug, or Task). Optional: environment, tester, approver, target test date."
 user-invocable: true
 disable-model-invocation: true
@@ -9,6 +9,8 @@ disable-model-invocation: true
 # GTM UAT document
 
 Read-only against Azure DevOps. Produce straightforward UAT documentation a business tester can follow before an item is released. Use for enhancements, fixes, configuration changes, integrations, and other release candidates. Use Azure DevOps MCP tools only. Follow the GTM team context instructions and the work item formatting standard for wording.
+
+Keep the document short: about one page for a small item. Cut anything a tester does not need to run the tests. Board columns do not map to work item System State; report the board column only and never compare or flag differences between them.
 
 Never invent system behavior, field names, navigation labels, expected values, or acceptance criteria. Anything not found in the sources is marked `To Be Confirmed` and listed in Open Questions and Gaps. Production must not be used for testing unless the user explicitly says so.
 
@@ -25,34 +27,36 @@ Never invent system behavior, field names, navigation labels, expected values, o
 
 ## 2. Define scope
 
-- State what is included, what is excluded, and what must be true before testing begins.
+- State briefly what is excluded and what must be true before testing begins.
 - Number acceptance criteria `AC-01`, `AC-02`, and so on. If the work item uses `AC1`, `AC2`, keep the mapping (`AC-01` = `AC1`).
-- Translate each acceptance criterion into at least one observable test case, numbered `TC-01`, `TC-02`. Add negative, permission, boundary, or error-handling cases only when relevant to the change.
-- Record each test case's source: `ADO Test Case #<id>`, `QA guide`, or `Derived from AC`. A case with no acceptance criterion is labeled `Supplemental (risk-based)`.
+- Group tests by **area of testing** (for example "Category picklist" or "Symptom picklists"), not one case per acceptance criterion. Name them `Scenario 1`, `Scenario 2`. Merge overlapping ADO test cases into one group and list their IDs as references. Do not repeat a check that applies to a whole area; state it once.
+- Add negative, permission, boundary, or regression checks only when relevant, labeled `Supplemental (risk-based)`.
 
 ## 3. Produce the document in this order
 
-Title line: `UAT: <work item ID> - <title>`, followed by a short header table with work item link, board column, release version, tester, approver, and target test date.
+Keep every section minimal. Omit tables that add no information.
 
-1. **UAT Overview**: one short paragraph on what is changing, why it is being tested, and what successful acceptance means.
-2. **Test Environment**: table with columns `Field`, `Required Value`, `Notes`. Rows: environment name and URL, application or build version, browser or device (when relevant), tester role and permissions, test accounts, test data, integrations or dependencies, feature flags or configuration, reset or cleanup. Include a line stating production must not be used.
-3. **Entry Criteria and Prerequisites**: concise, complete sentences.
-4. **Acceptance Criteria**: table with `Acceptance Criteria ID`, `Acceptance Criterion`, `Source or Reference`. Preserve wording; clarify ambiguity without changing intent.
-5. **Step-by-Step Test Cases**: for each case, `Test Case ID`, `Title`, `Source`, `Acceptance Criteria Covered`, `Purpose`, `Preconditions`, `Test Data`, a numbered table with `Step`, `Tester Action`, `Expected Result`, and `Cleanup or Reset` when needed. One action per step, direct verbs, enough explanation for an infrequent tester, and every expected result observable and specific. Place any supplied screenshot or evidence reference right after the step it supports. Keep setup actions separate from validation actions.
-6. **Test Results Log**: one table, one row per test case, columns `Test Case ID`, `Acceptance Criteria ID`, `Tester`, `Date`, `Environment or Build`, `Actual Result`, `Status`, `Evidence Link`, `Defect ID`, `Comments`. Status is only `Not Run`, `Pass`, `Fail`, or `Blocked`. Use `Not Run` and `To Be Completed` when results are not supplied.
-7. **Acceptance Criteria Coverage**: columns `Acceptance Criteria ID`, `Related Test Case IDs`, `Expected Outcome`, `Observed Outcome`, `Coverage Status`, `Notes or Gap`. Coverage status is only `Covered`, `Partially Covered`, or `Not Covered`. Never mark a criterion accepted merely because a test case exists; acceptance requires passing evidence for all related test cases.
-8. **Defects and Follow-Up**: columns `Defect ID`, `Related Test Case ID`, `Summary`, `Severity`, `Owner`, `Status`, `Retest Required`. If none are known, state the table is ready for use during execution. Pull linked Bugs from the work item when present.
-9. **UAT Sign-Off**: totals for total, passed, failed, blocked, and not-run cases when results exist; each acceptance criterion marked satisfied, unresolved, or untested; fields for business approver, decision, date, and comments. Never infer approval.
-10. **Open Questions and Gaps**: contradictions, missing coverage, missing test data, untestable criteria, and unreadable sources.
+The structure mirrors the Confluence "UAT Guide Template" (page 4638441532) in a lightweight form. Do not add a TOC, results database, roles table, communication plan, defect process, or sign-off table. Sign-off is a comment the business owner adds in ADO for SOX compliance.
+
+Page title: `UAT: <work item ID> - <title>`. In order:
+
+1. **UAT Scope** (info panel): numbered list with the work item ADO link, bold title, and a one-sentence outcome; then out-of-scope items.
+2. **Details table** (2 x 3): environment and URL, build, tester, test date, business owner, overall status lozenge (`Not Run`, `Pass`, `Fail`, `Blocked`). Mark unknowns `To Be Confirmed`.
+3. **User Preparation**: numbered list. Always include a link to the shared "QA Guide - Salesforce QA Login" page (Confluence page id 3924754564, `https://qsc.atlassian.net/wiki/pages/viewpage.action?pageId=3924754564`), plus required test data or accounts. Add a warning panel: do not test in production.
+4. **UAT Instructions**: three short steps: run each scenario and record Pass/Fail with notes; on failure create a bug linked to the work item and put its ID in Notes; when all pass, add a comment on the work item in ADO stating UAT has passed (SOX requirement).
+5. **Scenarios**: heading `Scenario N: <area of testing>`, then a status lozenge, ADO test case IDs, and AC IDs covered. Table columns `Step` (numbered `N.1`, `N.2`), `Tester Action`, `Expected Result`, `Pass / Fail`, `Notes`. One action per step, direct verbs, observable and specific expected results. Put screenshots (or an `[IMAGEn]` placeholder) after the table, labeled.
+6. **Open Questions**: short bullets, only true blockers, contradictions with comments, and unreadable sources.
 
 ## 4. Validate before finishing
 
-- Every acceptance criterion maps to at least one test case.
-- Every test case maps to at least one acceptance criterion or is labeled `Supplemental (risk-based)`.
-- Every test case has preconditions, numbered actions, and observable expected results.
-- Environment and permissions are explicit.
-- The results log has exactly one row per test case.
+- Every acceptance criterion is tagged in at least one scenario.
+- Every scenario has numbered steps and observable expected results.
+- The page is short, repeats nothing, and has no sign-off table.
 
 ## 5. Output
 
-Use plain language, short paragraphs, concise tables, and numbered steps. Explain business or system terms only when needed. Save the Markdown to `uat-<work item ID>.md` in the session files folder, show the document in chat, and tell the user the file path so it can be pasted or uploaded to Confluence. Write nothing back to Azure DevOps unless the user asks.
+Publish directly to Confluence with the Atlassian MCP tools (`createConfluenceContent`): cloudId `cbb0eec9-464c-4815-86a3-6f97352c86df`, space PE (id 2764374026), parent "Active UAT Guides" (page id 4575723533), HTML body, default (narrow) page width, `contentType: live_doc` so testers can edit results inline (an existing page cannot be converted; create a new live doc), and `data-layout="wide"` on every `<table>`. Use `<div data-type="panel-info|panel-warning">` for panels and `<span data-type="status" data-color="neutral|green|red|yellow">` for lozenges. If the MCP is unavailable, save Markdown to `uat-<work item ID>.md` in the session files folder instead.
+
+Screenshots cannot be uploaded through the MCP. Leave `[IMAGEn]` placeholders, save the images to the session files folder, and tell the user to insert them manually. If the QA guide is a .docx, ask the user to attach it, unzip it, and read `word\document.xml` and `word\media` for text and images.
+
+Reply with the page link and a two-line summary only. Write nothing back to Azure DevOps unless the user asks.

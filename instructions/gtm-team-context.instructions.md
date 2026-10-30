@@ -1,5 +1,4 @@
 ---
-applyTo: "**"
 description: "GTM Team Azure DevOps context: project, board columns, severity/priority, council tags, roster, query and status rules. Apply to all ADO / scrum work for the GTM Team."
 ---
 
@@ -51,7 +50,7 @@ Lanes:
 - **Enhancement lane**: net-new features and improvements planned through sprints.
 - **Production Support lane**: break/fix items outside the enhancement queue, prioritized by severity tier (P1 / P2 / P3).
 
-Board columns are the primary status indicator. System State must never be used for reporting, summaries, or filters unless a tool schema requires it. Note the lane when relevant.
+Board columns are the primary status indicator. System State must never be used for reporting, summaries, or filters unless a tool schema requires it. Board columns do not map to System State, so never compare, reconcile, or flag differences between them. Note the lane when relevant.
 
 ## Comments and status resolution
 
@@ -134,3 +133,12 @@ Use the ADO MCP server for work items, iterations, boards, and comments, and the
 - Summary metrics: total active, new since last update, aging >= 14 and >= 30 days, stale >= 7 days, In QA / In UAT / Ready to Deploy counts, top 3 business risks, Closed This Week (total and by council).
 - Output order: Report Metadata, Executive Summary, Functional Council Snapshot, Council Detail Tables, Aging and Escalation View, Board Column Distribution, Action Register.
 - Write concisely for business stakeholders: impact, blocker, owner.
+
+## UAT standard (lightweight PBIs and bugs)
+
+- UAT guides are short (about one page), grouped by area of testing as Scenario 1, 2, and so on, not by acceptance criterion.
+- Create them directly in Confluence: site qsc.atlassian.net, space PE, parent "Active UAT Guides" (page 4575723533), default narrow page width (never wide) with wide tables (`data-layout="wide"`), created as a live doc so testers can record results inline.
+- Follow the "UAT Guide Template" structure in a lightweight form: UAT Scope panel, details table, User Preparation, UAT Instructions, Scenarios, Open Questions. No sign-off table, results database, roles table, or communication plan.
+- User Preparation links the shared "QA Guide - Salesforce QA Login" page (id 3924754564). Never test in production.
+- SOX compliance: when UAT passes, the business owner adds a comment on the ADO work item stating UAT has passed. Failures are logged as bugs linked to the work item.
+- Confluence images cannot be uploaded through the MCP; leave placeholders and tell the user to insert them.
