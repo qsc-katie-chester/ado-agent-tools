@@ -72,15 +72,15 @@ Type `/` followed by the name. `/bpe-help` and `/gtm-help` list everything.
 
 Full walkthrough: [docs/training/](docs/training/00-start-here.md). Short version:
 
-1. Get access to this repo with your existing GitHub login (training page 01).
-2. Confirm Git is installed and the GitHub Copilot desktop app is signed in (page 02).
-3. Clone the repo (page 03), then from the repo folder run:
+1. Get access to this repo with your existing GitHub login.
+2. Add (clone) the repo in the GitHub Copilot desktop app.
+3. From the repo folder run:
    `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`
    This copies `agents`, `skills` and `instructions` to `C:\Users\<you>\.copilot\`.
-4. Connect the MCP servers below (page 05).
+4. Connect the MCP servers below.
 5. Reopen the Copilot app and type `/bpe-help`.
 
-To update later: `git pull`, then run the install script again.
+To update later: pull the latest changes, then run the install script again.
 
 ## MCP servers each teammate must connect
 

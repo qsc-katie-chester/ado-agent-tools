@@ -1,37 +1,19 @@
-# Start here
+# Team training: start here
 
-This guide assumes you have **never used GitHub or GitHub Copilot** beyond having a login and the **GitHub Copilot desktop app**. It is for Windows. Allow about 45 minutes for setup and 60 minutes for the exercises.
+For PMs, Dev and QA using the **GitHub Copilot desktop app** on Windows. You already have a GitHub login. No GitHub experience is needed.
 
 ## What you are getting
 
-A set of ready-made Copilot assistants ("agents") and shortcuts ("skills") that read Azure DevOps, Confluence and Salesforce for you and answer with sources. They do **not** change anything until you approve a preview.
+Ready-made Copilot assistants that read Azure DevOps, Confluence and Salesforce and answer with sources. They never change anything until you approve a preview.
 
-## Words you will see
+- **Agent**: a specialist you pick in the app (for example BPE Readiness Checker).
+- **Skill**: a shortcut you type, starting with `/` (for example `/bpe-help`).
+- **Repo**: the shared folder on GitHub that holds them.
+- **Pull request**: a proposal to change the shared files. Katie approves it.
 
-| Word | Plain meaning |
-|---|---|
-| GitHub | A website that stores shared files and tracks changes |
-| Repo (repository) | A shared folder on GitHub. Ours is `ado-agent-tools` |
-| Clone | Download a copy of the repo to your computer |
-| Pull | Download the latest updates |
-| Pull request (PR) | A proposal to change the shared files; Katie approves it |
-| Copilot | The AI assistant |
-| Agent | A Copilot specialist you pick (e.g. BPE Readiness Checker) |
-| Skill | A shortcut you type, starting with `/` (e.g. `/bpe-help`) |
-| MCP server | A connection that lets Copilot read a system such as Azure DevOps |
+## The pages
 
-## Pages
-
-1. [Get access to the repo](01-github-account-and-access.md)
-2. [Check your tools (Git and the Copilot app)](02-install-tools.md)
-3. [Get the repo](03-get-the-repo.md)
-4. [Sign in and install the toolkit](04-sign-in-and-install.md)
-5. [Connect MCP servers](05-connect-mcp-servers.md)
-6. [Your first run: /bpe-help](06-first-run.md)
-7. [Five hands-on exercises](07-exercises.md)
-8. [Give feedback or propose a change](08-feedback-and-changes.md)
-9. [Cheat sheet (one page)](09-cheat-sheet.md)
-10. [Troubleshooting](10-troubleshooting.md)
-11. [Facilitator outline (60-minute live session)](11-facilitator-outline.md)
-
-> Screenshots: this guide has marked `[SCREENSHOT: ...]` placeholders. Menu names in the Copilot app can change between versions; if yours differ, follow the closest option and tell the facilitator.
+1. [Setup](01-setup.md) (about 15 minutes)
+2. [Five exercises](02-exercises.md) (about 45 minutes)
+3. [Cheat sheet, feedback and troubleshooting](03-help.md)
+4. [Facilitator outline](04-facilitator-outline.md) (60-minute live session)
