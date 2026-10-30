@@ -34,12 +34,41 @@ Agents look for these exact server names. Use them when you add each server in t
 |---|---|---|
 | `azure-devops` | Azure DevOps | Yes |
 | `atlassian` | Confluence / Jira | Yes for BPE agents |
-| `salesforce` | Salesforce (read-only) | Yes for change impact and process docs |
+| `sf-mcp-server` | Salesforce (read-only); see setup below | Yes for change impact and process docs |
 | `miro`, `figma` | Diagrams | Optional |
 
 Sign in to each with your own work account. Ask Katie for the production Salesforce alias; never test in production.
 
 [PLACEHOLDER: Katie adds the approved install link or command for each server.]
+
+### Connecting Salesforce (`sf-mcp-server`)
+
+The Salesforce server runs on your computer and uses your own Salesforce CLI login. There is no separate sign-in in the app.
+
+1. Install Node.js LTS: `winget install --id OpenJS.NodeJS.LTS -e`
+2. Install the Salesforce CLI: `npm install -g @salesforce/cli`
+3. Close and reopen PowerShell, then log in to each org you need. A browser window opens each time; sign in with your work account:
+   ```
+   sf org login web --alias QA --instance-url https://qsc--qa.sandbox.my.salesforce.com
+   sf org login web --alias PROD --instance-url https://qsc.my.salesforce.com
+   ```
+   Add any other sandbox you use the same way (change the alias and URL).
+4. Check the logins: `sf org list`. Each org should be listed.
+5. In the app, open **Customize > Installed**, add a local MCP server named `sf-mcp-server`, and use this configuration (replace the org list with your own aliases):
+   ```json
+   "sf-mcp-server": {
+     "tools": ["*"],
+     "type": "local",
+     "command": "npx",
+     "args": ["-y", "@salesforce/mcp", "--orgs", "QA,PROD", "--toolsets", "orgs,metadata,data"]
+   }
+   ```
+6. Fully close and reopen the app. In a new chat ask: `List my Salesforce orgs`. You should see the aliases from step 3.
+
+Notes:
+- Only orgs listed in `--orgs` are available to the agent.
+- If a login expires, repeat step 3 for that org.
+- Agents are read-only. Do not ask them to deploy metadata, and never test in production.
 
 ## Step 5: First run
 
