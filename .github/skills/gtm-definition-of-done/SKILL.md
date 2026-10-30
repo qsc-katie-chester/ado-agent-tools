@@ -3,7 +3,6 @@ name: gtm-definition-of-done
 description: "Check whether a GTM PBI or Bug is actually done: acceptance criteria evidence, QA, UAT, SOX comment, release readiness. Returns Pass/Fail/Unknown with evidence."
 argument-hint: "ADO work item ID(s)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM definition of done check

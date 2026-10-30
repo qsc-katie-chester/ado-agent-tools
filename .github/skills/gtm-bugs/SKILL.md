@@ -3,7 +3,6 @@ name: gtm-bugs
 description: "GTM bugs: triage untriaged bugs (severity, priority, duplicates, owner, council tag) or produce the stakeholder bug report by Functional Council."
 argument-hint: "'triage' (optional bug ID, council tag, or 'new bugs') or 'report' (optional period or 'since last update' date)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM bugs

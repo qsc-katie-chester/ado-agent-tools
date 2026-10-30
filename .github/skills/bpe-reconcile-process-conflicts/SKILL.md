@@ -3,7 +3,6 @@ name: bpe-reconcile-process-conflicts
 description: "Merge per-source process extractions into one sequence, labeling each step Confirmed, Conflicting, Inferred, or Gap, and produce an open-questions list."
 argument-hint: "Extraction tables from bpe-extract-process-steps"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Reconcile process conflicts

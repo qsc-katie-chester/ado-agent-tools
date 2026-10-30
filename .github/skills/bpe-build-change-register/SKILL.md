@@ -3,7 +3,6 @@ name: bpe-build-change-register
 description: "Build Process Change Register entries (what changed in which process step, when, why, evidence) from mined ADO items, for the Confluence register page and sub-process step history."
 argument-hint: "Mining output or work item IDs; target register page"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Build the process change register

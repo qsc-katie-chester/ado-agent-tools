@@ -3,7 +3,6 @@ name: bpe-process-doc-to-diagram
 description: "Convert a BPE sub-process page's steps table into a swimlane flow (Mermaid, optionally Miro/FigJam), styled by Confirmed/Conflicting/Inferred/Gap."
 argument-hint: "Confluence page URL/ID and target (Mermaid, Miro, FigJam)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Process doc to diagram

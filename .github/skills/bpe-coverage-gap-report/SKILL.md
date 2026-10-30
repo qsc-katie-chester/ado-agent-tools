@@ -3,7 +3,6 @@ name: bpe-coverage-gap-report
 description: "Map process steps and work item acceptance criteria to existing test cases and UAT guides; report Covered/Partial/None with evidence."
 argument-hint: "ADO work item ID and optional sub-process page"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Coverage gap report

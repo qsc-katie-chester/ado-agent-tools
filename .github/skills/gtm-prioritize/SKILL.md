@@ -3,7 +3,6 @@ name: gtm-prioritize
 description: "Rank GTM backlog items by priority, severity, council, age, and stated business impact, with the evidence for each rank. Proposal only."
 argument-hint: "Optional: board column, council tag, or sprint scope (default: Ready and In Refinement)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM prioritize

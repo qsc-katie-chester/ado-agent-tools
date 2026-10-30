@@ -4,7 +4,7 @@ Shared GitHub Copilot agents, skills and instructions for the GTM / Business Pro
 
 ## Start here
 
-There are only **two agents**. Pick one in the agent picker of the GitHub Copilot desktop app and type what you need in plain English. You do not need to remember any skill names; the agent chooses the right skill. If you are unsure, type `/gtm-help` or `/bpe-help` for a menu.
+There are only **two agents**. Pick one in the agent picker of GitHub Copilot and describe the task in plain English; the agent selects the matching skill. You can also call any workflow directly with its `/skill-name` command. If you are unsure, type `/gtm-help` or `/bpe-help` for a menu.
 
 | Agent | Use it for | Example prompts |
 |---|---|---|
@@ -25,7 +25,7 @@ New to GitHub and Copilot? See [docs/training/](docs/training/00-start-here.md).
 
 ## Skills (slash commands)
 
-Skills are the steps behind each agent. You can type `/` plus the name directly, but you never have to.
+Skills are the workflows behind each agent. Plain-English routing and direct `/skill-name` invocation are both supported. Write-capable skills must show the exact content, target, and fields before asking for explicit approval; no preview means no write.
 
 **GTM Agent skills**
 
@@ -60,7 +60,7 @@ Skills are the steps behind each agent. You can type `/` plus the name directly,
 
 ## Instructions
 
-`.github/instructions/` holds shared rules the agents follow: `gtm-team-context` (project, board columns, roster, guardrails), `work-item-formatting` (titles, user story, AC format), `bpe-process-documentation` (evidence rules, page template). They have no `applyTo: "**"` pattern, so they are not forced into every chat; agents reference them by name.
+`.github/instructions/` holds shared rules: `gtm-team-context` (project, board columns, roster, guardrails), `work-item-formatting` (titles, user story, AC format), and `bpe-process-documentation` (evidence rules, page template). They are not automatically attached to every chat; each agent is instructed to read the relevant files at the start of a task.
 
 ## Install
 
@@ -72,13 +72,19 @@ Full walkthrough: [docs/training/](docs/training/00-start-here.md). Short versio
 4. Connect the MCP servers below.
 5. Pick **GTM Agent** or **BPE Agent**, and type `/gtm-help` or `/bpe-help`.
 
-To update later: `git pull`, then start a new session.
+To update later, use the **Update repo and Copilot** steps below. Existing conversations keep their loaded context; start a new session after updating to use the refreshed agent and skill files.
 
-### Optional: use the agents outside this repo
+### Update the repo and your Copilot sessions
 
-To have the agents available in every project, run from the repo folder:
-`powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`
-This copies `.github/agents`, `.github/skills` and `.github/instructions` to `C:\Users\<you>\.copilot\` and moves any retired agent and skill files from earlier versions into `C:\Users\<you>\.copilot\backup-retired\`. Run it again after each `git pull`.
+After an approved change is merged, open a clean checkout of this repo on `main` (or the branch that receives the merged updates) and run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\update.ps1
+```
+
+The script fast-forwards the current branch, validates the configuration, then copies the agents, skills, and instructions to `C:\Users\<you>\.copilot\`. It refuses to pull if the working tree has uncommitted changes. Restart Copilot and start a **new session** to load the update. If you only want to copy the current checkout without pulling, pass `-SkipPull`. To keep the agents available in the repository only, pull the merged changes and start a new session in that repo; the personal install is not needed.
+
+The lower-level `scripts\install.ps1` remains available to copy a checkout without pulling. Existing same-name files are replaced; unrelated personal files are left alone, and listed retired agents/skills are moved to `backup-retired`.
 
 ## MCP servers each teammate must connect
 
@@ -93,10 +99,10 @@ Agent tool lists use these **exact server names**. Name each server in your Copi
 | `figma` | Process flow diagrams in FigJam | Optional |
 
 **Portability notes**
-- Machine-specific server IDs were converted to the generic names above. Skill text refers to `salesforce/...` tools; agent frontmatter matches.
+- Machine-specific server IDs were converted to the generic names above. The Salesforce connector's configured server name must be `salesforce`, matching the tools in agent frontmatter.
 - Tool names inside each server (for example `searchConfluence`, `wit_work_item`) depend on the MCP server product you install. If your Atlassian or Salesforce server exposes different tool names, update the `tools:` list in the agent file.
 - The monthly leadership report no longer has its own agent; it is the `gtm-monthly-report` skill run by the GTM Agent.
-- Not verified on a second machine: that `server/tool` names resolve for your Copilot client. Test with Exercise 1.
+- The tool names shown are the repository's contract; verify the installed connector exposes them with Exercise 1. If a connector uses different names, update its configuration or the agent allowlist together and include that change in the same PR.
 
 ## What changed (consolidation)
 

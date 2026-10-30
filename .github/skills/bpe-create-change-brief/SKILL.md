@@ -3,12 +3,11 @@ name: bpe-create-change-brief
 description: "Produce a one-page change brief for Dev and QA: where the process changes, before/after, why, impact, test focus, risks, and open questions. Draft only."
 argument-hint: "Mapping and impact outputs for a work item"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Create change brief
 
-Business-friendly, concise, source-cited. Read-only; draft in chat and optionally save to the session files folder. Do not publish or comment on ADO unless the user asks and confirms.
+Business-friendly, concise, source-cited. Draft in chat by default. Save to the session files folder only when requested and after the user approves the exact draft and path. Do not publish or comment on ADO unless the user asks and confirms.
 
 ## Full change-impact flow
 Run `bpe-map-change-to-process`, then `bpe-assess-change-impact`, then this skill. Separate what the request states from what you reason; label Confirmed / Inferred / Gap. Do not assign owners, estimates, or priority.

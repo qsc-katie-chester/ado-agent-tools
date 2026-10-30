@@ -3,7 +3,6 @@ name: bpe-ingest-transcript
 description: "Take a meeting, workshop, or training transcript (pasted, file path, or M365 export) and produce a proposed update to specific process pages: new or changed steps, owners, rules, decisions, and answers to open questions, each with a quote and timestamp."
 argument-hint: "Transcript text or file path, plus meeting title, date, attendees, and the sub-process page(s) it relates to (optional)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Ingest a transcript into process pages

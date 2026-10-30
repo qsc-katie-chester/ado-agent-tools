@@ -3,7 +3,6 @@ name: gtm-backlog-refinement
 description: "Refine the GTM backlog: flag PBIs and Bugs missing user story, business problem, acceptance criteria, priority, council tag, or assignee, plus duplicates and oversized items."
 argument-hint: "Optional: board column (default Scoping, In Refinement, Ready), council tag, or a work item ID"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM backlog refinement

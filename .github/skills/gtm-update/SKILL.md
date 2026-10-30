@@ -3,7 +3,6 @@ name: gtm-update
 description: "Update GTM work item fields or add a comment after showing the exact changes and getting confirmation."
 argument-hint: "Work item ID and the changes, for example 1234 priority=2 or 1234 comment=\"text\""
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM update

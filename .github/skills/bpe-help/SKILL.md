@@ -2,7 +2,6 @@
 name: bpe-help
 description: "Menu of what the BPE Agent can do: the bpe-* skills with example prompts. Start here if you are unsure what to ask."
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # BPE help

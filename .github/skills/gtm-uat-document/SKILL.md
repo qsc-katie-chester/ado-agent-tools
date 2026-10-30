@@ -3,16 +3,15 @@ name: gtm-uat-document
 description: "Create a business-friendly UAT document (published to Confluence) for a GTM work item from its QA guide, acceptance criteria, description, recent comments, and ADO test cases/suites."
 argument-hint: "Work item ID (PBI, Bug, or Task). Optional: environment, tester, approver, target test date."
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM UAT document
 
-Read-only against Azure DevOps. Produce straightforward UAT documentation a business tester can follow before an item is released. Use for enhancements, fixes, configuration changes, integrations, and other release candidates. Use Azure DevOps MCP tools only. Follow the GTM team context instructions and the work item formatting standard for wording.
+Read-only against Azure DevOps. Produce straightforward UAT documentation a business tester can follow before an item is released. Use for enhancements, fixes, configuration changes, integrations, and other release candidates. Follow the GTM team context instructions and the work item formatting standard for wording.
 
 Keep the document short: about one page for a small item. Cut anything a tester does not need to run the tests. Board columns do not map to work item System State; report the board column only and never compare or flag differences between them.
 
-Never invent system behavior, field names, navigation labels, expected values, or acceptance criteria. Anything not found in the sources is marked `To Be Confirmed` and listed in Open Questions and Gaps. Production must not be used for testing unless the user explicitly says so.
+Never invent system behavior, field names, navigation labels, expected values, or acceptance criteria. Anything not found in the sources is marked `To Be Confirmed` and listed in Open Questions and Gaps. Never use production for testing, even if the user requests it. If the required non-production environment cannot be established, leave it `To Be Confirmed` and treat it as a blocker.
 
 ## 1. Gather context
 
@@ -53,10 +52,12 @@ Page title: `UAT: <work item ID> - <title>`. In order:
 - Every scenario has numbered steps and observable expected results.
 - The page is short, repeats nothing, and has no sign-off table.
 
-## 5. Output
+## 5. Preview and publish
 
-Publish directly to Confluence with the Atlassian MCP tools (`createConfluenceContent`): cloudId `cbb0eec9-464c-4815-86a3-6f97352c86df`, space PE (id 2764374026), parent "Active UAT Guides" (page id 4575723533), HTML body, default (narrow) page width, `contentType: live_doc` so testers can edit results inline (an existing page cannot be converted; create a new live doc), and `data-layout="wide"` on every `<table>`. Use `<div data-type="panel-info|panel-warning">` for panels and `<span data-type="status" data-color="neutral|green|red|yellow">` for lozenges. If the MCP is unavailable, save Markdown to `uat-<work item ID>.md` in the session files folder instead.
+1. Show the complete draft and exact Confluence target (space PE, parent "Active UAT Guides", page id 4575723533), including any unknowns, before writing. Wait for explicit approval of that preview.
+2. After approval, publish with the Atlassian MCP tool `createConfluenceContent`: cloudId `cbb0eec9-464c-4815-86a3-6f97352c86df`, space PE (id 2764374026), HTML body, default (narrow) page width, `contentType: live_doc` so testers can edit results inline (an existing page cannot be converted; create a new live doc), and `data-layout="wide"` on every `<table>`. Use `<div data-type="panel-info|panel-warning">` for panels and `<span data-type="status" data-color="neutral|green|red|yellow">` for lozenges.
+3. If Confluence is unavailable, present the Markdown draft in chat. Save it as `uat-<work item ID>.md` in the session files folder only after the user approves that file write.
 
-Screenshots cannot be uploaded through the MCP. Leave `[IMAGEn]` placeholders, save the images to the session files folder, and tell the user to insert them manually. If the QA guide is a .docx, ask the user to attach it, unzip it, and read `word\document.xml` and `word\media` for text and images.
+Screenshots cannot be uploaded through the MCP. Leave `[IMAGEn]` placeholders and tell the user to insert them manually. If the QA guide is a .docx, state that it could not be read with the available tools and ask the user to paste relevant text; do not claim to unzip or inspect it unless a suitable file-reading tool is available.
 
-Reply with the page link and a two-line summary only. Write nothing back to Azure DevOps unless the user asks.
+If published, reply with the page link and a two-line summary only. If the user does not approve the preview or publishing is unavailable, state that clearly and provide the draft or blocker. Write nothing back to Azure DevOps unless the user asks.

@@ -3,7 +3,6 @@ name: gtm-work-item-author
 description: "Draft GTM Epics, Features, PBIs, Tasks, and Bugs from an idea or request: hierarchy, three-section descriptions, numbered acceptance criteria, splits, and decomposition. Previews before any creation."
 argument-hint: "An idea, request, IR #, or existing work item ID to split or decompose"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM work item author

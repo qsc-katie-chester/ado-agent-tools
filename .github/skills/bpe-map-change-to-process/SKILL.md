@@ -3,7 +3,6 @@ name: bpe-map-change-to-process
 description: "Read a new enhancement (ADO item and/or Intake Request) and locate the affected steps in the approved business process document, with the stated reason for the change."
 argument-hint: "ADO work item ID and/or IR number, optional process name or process doc URL"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # Map change to process

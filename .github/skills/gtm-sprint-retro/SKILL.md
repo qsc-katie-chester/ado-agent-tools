@@ -3,7 +3,6 @@ name: gtm-sprint-retro
 description: "Prepare GTM Team sprint review and retrospective data from Azure DevOps: delivered vs. committed, carryover, bugs, flow, and discussion prompts."
 argument-hint: "Sprint name, for example Sprint 24 (defaults to the most recently completed sprint)"
 user-invocable: true
-disable-model-invocation: true
 ---
 
 # GTM sprint retro
