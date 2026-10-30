@@ -1,6 +1,6 @@
 # 2. Check your tools
 
-You already have the GitHub Copilot desktop app. You also need **Git**, which downloads the repo to your computer.
+You already have the GitHub Copilot desktop app. **Git** is only needed if you clone with commands instead of the app (page 3, Option B), and for the install script's folder path it helps to have it, so install it if you can.
 
 ## Git
 

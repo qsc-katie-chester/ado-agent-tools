@@ -11,9 +11,9 @@ Open the Copilot desktop app. If it asks, click **Sign in with GitHub** and appr
 The app reads personal agents and skills from `C:\Users\<you>\.copilot\`. A script copies them there:
 
 1. Open PowerShell.
-2. Run:
+2. Run these, replacing the path with where the repo is on your computer (the app shows it; Option B uses `$HOME\source\ado-agent-tools`):
    ```
-   cd $HOME\source\ado-agent-tools
+   cd <path to ado-agent-tools>
    powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
    ```
 3. You should see three "Copied N files" lines and "Done".
