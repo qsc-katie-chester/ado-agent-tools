@@ -25,7 +25,7 @@ New to GitHub and Copilot? Start with [docs/training/](docs/training/00-start-he
 
 ## Agents
 
-Pick an agent from the agent list in the Copilot app, or in the CLI use `/agent`.
+Pick an agent from the agent picker in the GitHub Copilot desktop app.
 
 | Agent | Use it when | Who |
 |---|---|---|
@@ -72,13 +72,13 @@ Type `/` followed by the name. `/bpe-help` and `/gtm-help` list everything.
 
 Full walkthrough: [docs/training/](docs/training/00-start-here.md). Short version:
 
-1. Get a GitHub account and access to this repo (training page 01).
-2. Install Git and the GitHub Copilot app or CLI (page 02).
+1. Get access to this repo with your existing GitHub login (training page 01).
+2. Confirm Git is installed and the GitHub Copilot desktop app is signed in (page 02).
 3. Clone the repo (page 03), then from the repo folder run:
    `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`
    This copies `agents`, `skills` and `instructions` to `C:\Users\<you>\.copilot\`.
 4. Connect the MCP servers below (page 05).
-5. Restart Copilot and type `/bpe-help`.
+5. Reopen the Copilot app and type `/bpe-help`.
 
 To update later: `git pull`, then run the install script again.
 

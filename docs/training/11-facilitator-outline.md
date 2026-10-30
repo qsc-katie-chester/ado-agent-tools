@@ -2,8 +2,8 @@
 
 **Audience:** PMs, Dev, QA with no GitHub or Copilot experience.
 **Before the session (at least 2 days ahead):**
-- Everyone has a GitHub account, Copilot license, and repo invitation accepted (page 1). Collect usernames early.
-- Git and Copilot installed (page 2). Ask IT if installs are blocked.
+- Everyone already has a GitHub login and the Copilot desktop app. Collect GitHub usernames early, send repo invitations, and confirm everyone accepted (page 1).
+- Git installed (page 2). Ask IT if installs are blocked.
 - Insert approved MCP install details on page 5. Confirm each person can sign in to `azure-devops`, `atlassian`, `salesforce`.
 - Prepare one safe sample PBI, one enhancement with a documented process page, and one short non-confidential transcript. Insert IDs on page 7.
 - Test every exercise yourself the day before.

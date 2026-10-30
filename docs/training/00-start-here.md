@@ -1,6 +1,6 @@
 # Start here
 
-This guide assumes you have **never used GitHub or GitHub Copilot**. It is for Windows. Allow about 45 minutes for setup and 60 minutes for the exercises.
+This guide assumes you have **never used GitHub or GitHub Copilot** beyond having a login and the **GitHub Copilot desktop app**. It is for Windows. Allow about 45 minutes for setup and 60 minutes for the exercises.
 
 ## What you are getting
 
@@ -22,8 +22,8 @@ A set of ready-made Copilot assistants ("agents") and shortcuts ("skills") that 
 
 ## Pages
 
-1. [GitHub account and repo access](01-github-account-and-access.md)
-2. [Install Git and GitHub Copilot](02-install-tools.md)
+1. [Get access to the repo](01-github-account-and-access.md)
+2. [Check your tools (Git and the Copilot app)](02-install-tools.md)
 3. [Get the repo](03-get-the-repo.md)
 4. [Sign in and install the toolkit](04-sign-in-and-install.md)
 5. [Connect MCP servers](05-connect-mcp-servers.md)
