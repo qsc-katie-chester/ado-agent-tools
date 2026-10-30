@@ -12,7 +12,7 @@ Nobody edits the shared copy directly.
 
 ## Easiest way (no tools to install)
 
-1. Open the repo on github.com and find the file (for example `skills/bpe-help/SKILL.md`).
+1. Open the repo on github.com and find the file (for example `.github/skills/bpe-help/SKILL.md`).
 2. Click the pencil icon (**Edit**).
 3. Make your change. Keep it small and change one thing at a time.
 4. Click **Commit changes**, choose **Create a new branch for this commit and start a pull request**.

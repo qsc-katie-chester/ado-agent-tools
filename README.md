@@ -60,7 +60,7 @@ Skills are the steps behind each agent. You can type `/` plus the name directly,
 
 ## Instructions
 
-`instructions/` holds shared rules the agents follow: `gtm-team-context` (project, board columns, roster, guardrails), `work-item-formatting` (titles, user story, AC format), `bpe-process-documentation` (evidence rules, page template). They have no `applyTo: "**"` pattern, so they are not forced into every chat; agents reference them by name.
+`.github/instructions/` holds shared rules the agents follow: `gtm-team-context` (project, board columns, roster, guardrails), `work-item-formatting` (titles, user story, AC format), `bpe-process-documentation` (evidence rules, page template). They have no `applyTo: "**"` pattern, so they are not forced into every chat; agents reference them by name.
 
 ## Install
 
@@ -68,13 +68,17 @@ Full walkthrough: [docs/training/](docs/training/00-start-here.md). Short versio
 
 1. Get access to this repo with your existing GitHub login.
 2. Add (clone) the repo in the GitHub Copilot desktop app.
-3. From the repo folder run:
-   `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`
-   This copies `agents`, `skills` and `instructions` to `C:\Users\<you>\.copilot\`. It also moves any retired agent and skill files from earlier versions into `C:\Users\<you>\.copilot\backup-retired\` so you only see the two agents.
+3. Open the cloned repo in the app. The agents, skills and instructions in `.github/` are found automatically; no install step is needed.
 4. Connect the MCP servers below.
-5. Reopen the Copilot app, pick **GTM Agent** or **BPE Agent**, and type `/gtm-help` or `/bpe-help`.
+5. Pick **GTM Agent** or **BPE Agent**, and type `/gtm-help` or `/bpe-help`.
 
-To update later: pull the latest changes, then run the install script again.
+To update later: `git pull`, then start a new session.
+
+### Optional: use the agents outside this repo
+
+To have the agents available in every project, run from the repo folder:
+`powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1`
+This copies `.github/agents`, `.github/skills` and `.github/instructions` to `C:\Users\<you>\.copilot\` and moves any retired agent and skill files from earlier versions into `C:\Users\<you>\.copilot\backup-retired\`. Run it again after each `git pull`.
 
 ## MCP servers each teammate must connect
 
@@ -100,7 +104,7 @@ Eight agents became two. Retired agents: BPE Change Impact Analyst, Readiness Ch
 
 ## Privacy
 
-`instructions/gtm-team-context.instructions.md` contains a team roster (names and roles) and the ADO organization and project names. Keep this repository **private** and share it only with the team.
+`.github/instructions/gtm-team-context.instructions.md` contains a team roster (names and roles) and the ADO organization and project names. Keep this repository **private** and share it only with the team.
 
 ## Contributing
 
