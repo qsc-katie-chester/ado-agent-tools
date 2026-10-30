@@ -18,5 +18,8 @@ Read-only. Follow `bpe-process-documentation.instructions.md`.
 5. List documents that would become stale (process doc steps, UAT/QA guides, training).
 6. Rate nothing as high/low unless a source states it. List the facts that drive concern (for example, a changed identifier used downstream).
 
+## Change history
+When the Q2C Process Change Register exists, read it (and the `proc:` tag via WIQL, on request) to show when each affected step last changed and which items and test cases touched it. Propose the `proc:` tag with `bpe-tag-work-items-with-process` (preview only).
+
 ## Output
 Impact table by area (process, systems, data, integration, tests/UAT, reports, documentation, related work) with label and source. Then risks and open questions.

@@ -10,6 +10,9 @@ disable-model-invocation: true
 
 Business-friendly, concise, source-cited. Read-only; draft in chat and optionally save to the session files folder. Do not publish or comment on ADO unless the user asks and confirms.
 
+## Full change-impact flow
+Run `bpe-map-change-to-process`, then `bpe-assess-change-impact`, then this skill. Separate what the request states from what you reason; label Confirmed / Inferred / Gap. Do not assign owners, estimates, or priority.
+
 ## Format
 1. **Change** : work item ID/IR, title, one-line summary, board column.
 2. **Why** : verbatim stated reason with source, or "Not stated".

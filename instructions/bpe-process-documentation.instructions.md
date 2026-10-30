@@ -4,7 +4,7 @@ description: "Use when documenting, reviewing, or analyzing business processes (
 
 # BPE Process Documentation Standards
 
-Applies to the Process Cartographer agent and the `bpe-*` skills.
+Applies to the BPE Agent and the `bpe-*` skills.
 
 ## Evidence rules
 - Read-only by default. Preview exact changes and get confirmation before any write or publish.

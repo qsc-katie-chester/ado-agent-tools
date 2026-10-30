@@ -6,7 +6,7 @@ For PMs, Dev and QA using the **GitHub Copilot desktop app** on Windows. You alr
 
 Ready-made Copilot assistants that read Azure DevOps, Confluence and Salesforce and answer with sources. They never change anything until you approve a preview.
 
-- **Agent**: a specialist you pick in the app (for example BPE Readiness Checker).
+- **Agent**: a specialist you pick in the app. There are only two: **GTM Agent** and **BPE Agent**.
 - **Skill**: a shortcut you type, starting with `/` (for example `/bpe-help`).
 - **Repo**: the shared folder on GitHub that holds them.
 - **Pull request**: a proposal to change the shared files. Katie approves it.
