@@ -21,6 +21,8 @@ Show this list, then ask which workflow the user wants. Do not call any tools un
 | "Draft or split a work item" | `/gtm-work-item-author` |
 | "What is on my plate?" / "Summarize PBI 12345" | `/gtm-work-lookup` |
 | "Update PBI 12345" (previews first) | `/gtm-update` |
+| "Is PBI 12345 really done?" | `/gtm-definition-of-done` |
+| "Handoff note for PBI 12345 to QA" | `/gtm-handoff` |
 | "UAT guide for PBI 12345" | `/gtm-uat-document` |
 | "Search the wiki" | `/gtm-docs` |
 | "Monthly leadership report for September 2026" | `/gtm-monthly-report` |

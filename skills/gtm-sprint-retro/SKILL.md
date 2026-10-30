@@ -23,6 +23,8 @@ Read-only. Follow the GTM team context instructions (org `ablcode`, project `Lyr
 2. **Metrics**: committed vs. delivered counts, carryover count, bugs opened/closed, Production Support volume.
 3. **Carryover**: ID, title, column, stated reason (verbatim with author/date) or "no reason stated".
 4. **What went well / what to improve**: only points supported by evidence from items or comments; label anything else as a discussion prompt.
-5. **Discussion prompts and proposed action items**: each with a suggested owner and a testable outcome, for team confirmation.
+5. **Perspective prompts**: evidence-backed questions per lens for the team to answer: Product (were requirements and acceptance criteria clear, were priorities right), Technical (estimates, rework, bugs introduced), Quality (bugs found late vs. early, QA/UAT queue time), Process (blockers and how fast they cleared, sprint goal met).
+6. **Carry-forward**: open action items from the previous retro, if documented in the wiki or Confluence, with status; otherwise state none found.
+7. **Discussion prompts and proposed action items**: each with a suggested owner and a testable outcome, for team confirmation.
 
 Do not infer causes or intent. Do not modify any work item.

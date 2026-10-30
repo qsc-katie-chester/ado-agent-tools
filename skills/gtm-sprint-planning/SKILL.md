@@ -27,5 +27,8 @@ Read-only. Follow the GTM team context instructions (org `ablcode`, project `Lyr
 4. Production Support load (severity, priority, age).
 5. Not-ready items with specific gaps and an owner to resolve each.
 6. Proposed commitment that fits stated capacity, with rationale. State that effort estimates are missing wherever they are.
+7. Risks and dependencies: for each, likelihood and impact as stated in comments or links (otherwise "not assessed"), an owner, and a proposed mitigation.
+8. Decomposition candidates: committed PBIs with no child Tasks or with many unrelated acceptance criteria, with a suggested split by role (dev, QA, UAT, release). Offer `gtm-work-item-author` to draft them.
+9. Suggested sprint goal as one sentence, for the team to confirm.
 
 Do not infer sprint commitment from comments. Do not update any work item unless the user explicitly asks, and list exact fields first.

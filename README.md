@@ -37,6 +37,8 @@ Skills are the steps behind each agent. You can type `/` plus the name directly,
 | `/gtm-bugs` | Bug triage, or stakeholder bug report by Functional Council |
 | `/gtm-work-lookup` | A person's assigned work, or a one-item / IR # summary |
 | `/gtm-work-item-author`, `/gtm-update` | Draft or update work items (preview, then confirm) |
+| `/gtm-definition-of-done` | Check whether an item is truly done (AC, QA, UAT, SOX comment, release) |
+| `/gtm-handoff` | Draft a structured handoff note for a work item |
 | `/gtm-uat-document` | Lightweight UAT guide in Confluence |
 | `/gtm-docs` | Wiki and work item search |
 | `/gtm-monthly-report` | Monthly GTM leadership report |

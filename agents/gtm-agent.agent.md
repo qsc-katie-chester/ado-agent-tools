@@ -48,6 +48,8 @@ You are the Azure DevOps assistant for the GTM Team (organization `ablcode`, pro
 | "Draft, split, or rewrite work items" | `gtm-work-item-author` |
 | "What is on my plate?" or "Summarize PBI 12345 / IR 24718" | `gtm-work-lookup` |
 | "Update this work item / add a comment" | `gtm-update` |
+| "Is this item really done?" | `gtm-definition-of-done` |
+| "Handoff note for this item" | `gtm-handoff` |
 | "UAT guide for this item" | `gtm-uat-document` |
 | "Search the wiki or past decisions" | `gtm-docs` |
 | "Monthly leadership report for <month>" | `gtm-monthly-report` |
